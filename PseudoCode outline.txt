@@ -1,0 +1,35 @@
+
+define array which includes all letters
+define array which includes player's valid letter choices
+define remaining guess count (starts at 10)
+define userScore = 0
+define cpuScore = 0
+define letters guessed so far as blank string
+Create reset function which does the following:
+			reset valid choices to full list
+			reset remaining guess count to 10
+			reset letters guessed so far
+			cpu chooses a new random # generator
+
+
+cpu chooses with random # generator (0 to 25)
+
+when user inputs a valid letter, 
+	if letter = cpuChoice
+		then 	user wins, point added to userScore
+			return message "You guessed it! Good Job!"
+			run reset function
+
+	if letter != cpuChoice
+		then 	print letter on "letters guessed so far" ( add + " key" to string)
+			remove letter from pool of valid choices (for loop)
+			decrease number of guesses remaining by 1
+			check:
+				if remaining guesscount < 0
+					then	cpu wins, add point to cpuScore
+						return message "You Lose!
+						run reset function
+						
+
+if user inputs invalid letter choice
+	return message "Invalid letter choice"

@@ -13,7 +13,7 @@ var trackerCard = document.getElementById("guess-tracker")
 
 var cpuPool = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-var userPool = cpuPool;
+var userPool = [];
 
 // Defining initial values
 
@@ -32,7 +32,7 @@ guessCard.textContent = guessCount;
 //Create reset function
 
 function reset() {
-    userPool = cpuPool;
+    userPool = [];
     guessCount = 9;
     guessTracker = "";
     cpuChoice = cpuPool[Math.floor(Math.random() * 25)];
@@ -51,33 +51,35 @@ document.onkeyup = function(event) {
 
   console.log("key pressed: " + keyPressed)
 
-  //checks if valid keypress
-  if (userPool.indexOf(keyPressed) > -1) {
+  //checks if valid letter
+  if (cpuPool.indexOf(keyPressed) != -1) {
     
-    if (keyPressed !== cpuChoice) {
+    //checks if letter has been guessed
+    if (userPool.indexOf(keyPressed) === -1) {
 
-      guessTracker = guessTracker + " " + keyPressed;
-      trackerCard.textContent = guessTracker;
+      if (keyPressed !== cpuChoice) {
 
-      guessCount = guessCount - 1;
-      guessCard.textContent = guessCount;
+        guessTracker = guessTracker + " " + keyPressed;
+        trackerCard.textContent = guessTracker;
+        guessCount = guessCount - 1;
+        guessCard.textContent = guessCount;
+        userPool.push(keyPressed)
+      }
+
+      if (guessCount < 1) {
+        lossCount = lossCount + 1;
+        lossCard.textContent = lossCount;
+        reset()
+      }
+
+      if (keyPressed === cpuChoice) {
+
+        winCount = winCount + 1;
+        winsCard.textContent = winCount;
+        reset();
+    
+      }
     }
-
-    if (guessCount < 1) {
-      lossCount = lossCount + 1;
-      lossCard.textContent = lossCount;
-      reset()
-    }
-
-    if (keyPressed === cpuChoice) {
-
-      winCount = winCount + 1;
-      winsCard.textContent = winCount;
-
-      reset();
-  
-    }
-
   }
 
 }

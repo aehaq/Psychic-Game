@@ -29,8 +29,6 @@ winsCard.textContent = winCount;
 lossCard.textContent = lossCount;
 guessCard.textContent = guessCount;
 
-console.log(cpuChoice)
-
 //Create reset function
 
 function reset() {
@@ -45,12 +43,17 @@ function reset() {
 
 //Behaviors on keypress
 
+console.log("Cpu Choice: " + cpuChoice)
+
 document.onkeyup = function(event) {
 
   var keyPressed = event.key;
 
+  console.log("key pressed: " + keyPressed)
+
     //checks if keyPressed is a valid option
-  if (userPool.indexOf(keyPressed) < 0) {
+
+  if (userPool.indexOf(keyPressed) > -1) {
 
     if (keyPressed === cpuChoice) {
 
@@ -59,8 +62,21 @@ document.onkeyup = function(event) {
 
       reset();
   
-    } else {
+    }
+    
+    if (keyPressed !== cpuChoice) {
 
+      guessTracker = guessTracker + " " + keyPressed;
+      trackerCard.textContent = guessTracker;
+
+      guessCount = guessCount - 1;
+      guessCard.textContent = guessCount;
+    }
+
+    if (guessCount < 1) {
+      lossCount = lossCount + 1;
+      lossCard.textContent = lossCount;
+      reset()
       
     }
 

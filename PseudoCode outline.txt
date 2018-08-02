@@ -1,13 +1,15 @@
 
 define array which includes all letters
 define array which includes player's valid letter choices
-define remaining guess count (starts at 10)
+
+define remaining guess count (starts at 9)
 define userScore = 0
 define cpuScore = 0
 define letters guessed so far as blank string
+
 Create reset function which does the following:
 			reset valid choices to full list
-			reset remaining guess count to 10
+			reset remaining guess count to 9
 			reset letters guessed so far
 			cpu chooses a new random # generator
 

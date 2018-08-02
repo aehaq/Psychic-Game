@@ -51,18 +51,8 @@ document.onkeyup = function(event) {
 
   console.log("key pressed: " + keyPressed)
 
-    //checks if keyPressed is a valid option
-
+  //checks if valid keypress
   if (userPool.indexOf(keyPressed) > -1) {
-
-    if (keyPressed === cpuChoice) {
-
-      winCount = winCount + 1;
-      winsCard.textContent = winCount;
-
-      reset();
-  
-    }
     
     if (keyPressed !== cpuChoice) {
 
@@ -77,7 +67,15 @@ document.onkeyup = function(event) {
       lossCount = lossCount + 1;
       lossCard.textContent = lossCount;
       reset()
-      
+    }
+
+    if (keyPressed === cpuChoice) {
+
+      winCount = winCount + 1;
+      winsCard.textContent = winCount;
+
+      reset();
+  
     }
 
   }

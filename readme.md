@@ -5,7 +5,7 @@ Make a "Psychic Game", where you must guess the number or letter that the comput
 [Psychic-Game](https://aehaq.github.io/)
 
 # Images
-![About](assets/images/screenshots/...)
+![](assets/images/screenshots/...)
 
 # Technology Used
 - html

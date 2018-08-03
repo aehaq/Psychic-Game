@@ -11,20 +11,48 @@
 </head>
 <body>
 
-    <h1> Psychic Game </h1>
-        <br>
-    <h2> Try and guess what letter I am thinking of. </h2>
-        <br>
-    <p>Wins: <span id="win-count"></p>
-        <br>    
-    <p>Losses: <span id="lose-count"></p>
-        <br>
-    <p>Guesses Left: <span id="guess-count"></p>
-        <br>
-    <p> Your guesses so far: <span id="guess-tracker"></span></p>
-        <br>
-    <p><span id="message-box"></span></p>
-        <br>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 jumbotron">
+            <h1 class="display-4">Psychic Game</h1>
+                <p class="lead">Try and guess what letter I am thinking of. </p>
+                <hr class="my-2">
+                <p><span id="message-box"></span></p>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-md-4 card bg-light text-center">
+                <h2 class="card-title">Wins</h2>
+                <h4><span id="win-count"></h4>
+            </div>
+            <div class="col-md-2 col-sm-1 col-0"></div>
+            <div class="col-md-4 card bg-light text-center">
+                <h2 class="card-title">Losses</h2>
+                <h4><span id="lose-count"></h4>
+            </div>
+            <div class="col"></div>
+        </div>
+
+        <div class="row"></div>
+
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-md-4 card guess-box jumbotron">
+                <h2>Guesses Left: <span id="guess-count"></h2>
+                <hr class="my-2">
+                <h4> Your guesses so far: <h4></h4>
+                <p class="text-center"><span id="guess-tracker"></span></p>
+            <br>
+            </div>
+            <div class="col"></div>
+        </div>
+
+    </div>
     <script src="assets/javascript/game.js"></script>
 </body>
 </html>

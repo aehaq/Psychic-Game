@@ -39,13 +39,14 @@ incorrectPrompt = "Sorry, that's not the number I am thinking of. Guess again!";
 winsCard.textContent = winCount;
 lossCard.textContent = lossCount;
 guessCard.textContent = guessCount;
+trackerCard.textContent = "none";
 
 //Create reset function
 
 function reset() {
     userPool = [];
     guessCount = 9;
-    guessTracker = "";
+    guessTracker = "none";
     cpuChoice = cpuPool[Math.floor(Math.random() * 25)];
 
     guessCard.textContent = guessCount;

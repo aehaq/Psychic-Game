@@ -32,7 +32,7 @@ messageCard.textContent = "Welcome! You can guess a letter by typing it on your 
 winPrompt = "Congratulations, You won this round! Press any key to go again.";
 losePrompt = "Sorry, but you are out of guesses! You lose, but you can press any key to go again.";
 invalidPrompt = "It seems you've already guessed that letter. Try one you haven't guessed.";
-incorrectPrompt = "Sorry, that's not the number I am thinking of. Guess again!";
+incorrectPrompt = "Sorry, that's not the letter I am thinking of. Guess again!";
 
 //Display necessary functions.
 

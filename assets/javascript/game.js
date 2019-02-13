@@ -68,7 +68,12 @@ document.onkeyup = function(event) {
       //If the guess is incorrect
       if (keyPressed !== cpuChoice) {
 
-        guessTracker = guessTracker + " " + keyPressed;
+        if (guessTracker === "none") {
+          guessTracker = keyPressed;
+        } else {
+          guessTracker = guessTracker + " " + keyPressed;
+        }
+           
         trackerCard.textContent = guessTracker;
         guessCount = guessCount - 1;
         guessCard.textContent = guessCount;
